@@ -1,6 +1,6 @@
 
-// const {lab} = require('../models')
-// const {Op} =require('../models')
+const {lab} = require('../models')
+const {Op} =require('../models')
 
 
 module.exports ={ 

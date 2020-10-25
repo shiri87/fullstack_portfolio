@@ -1,3 +1,8 @@
+
+const {register} = require('../models')
+const {Op} =require('../models')
+
+
 module.exports={
    async register(req,res){
         try{res.status(200)
