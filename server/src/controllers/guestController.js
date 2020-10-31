@@ -1,6 +1,6 @@
 
-// const {guest} = require('../models')
-// const {Op} =require('../models')
+const {guest} = require('../models')
+const {Op} =require('../models')
 
 module.exports ={ 
     async getGuest(req,res){

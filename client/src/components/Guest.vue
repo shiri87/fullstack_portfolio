@@ -1,5 +1,11 @@
 <template>
-  <h1>guest</h1>
+  <div>
+    <h1>guest</h1>
+    <p>
+      nickname: { type: DataTypes.STRING}, year: { type: DataTypes.STRING },
+      msg: { type: DataTypes.STRING }, image: { type: DataTypes.STRING },
+    </p>
+  </div>
 </template>
 
 <script>

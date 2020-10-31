@@ -1,14 +1,15 @@
 <template>
-  <div class="container">
-    <h1>
-      Hello world, I am Shiri.
-    </h1>
-    <h4>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-      maxime quasi quos incidunt quas ea labore possimus, voluptatum excepturi
-      blanditiis, fugiat sunt consequuntur! Deserunt placeat deleniti itaque
-      quo, blanditiis nam!
-    </h4>
+  <div class="parallax-container container">
+    <div class="parallax">
+      <h1>
+        Hello world, I am Shiri.
+      </h1>
+      <h4>
+        I am a newb programmer Melbourne-based, ex-designer. I seek to create
+        some incredible projects with you.
+      </h4>
+      <img src="../assets/shiri_laptop.svg" alt="" />
+    </div>
   </div>
 </template>
 

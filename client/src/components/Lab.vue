@@ -1,5 +1,12 @@
 <template>
-  <h1>lab</h1>
+  <div>
+    <h1>lab</h1>
+    <p>
+      project: { type: DataTypes.STRING}, tags: { type: DataTypes.STRING },
+      category: { type: DataTypes.STRING }, image: { type: DataTypes.STRING },
+      version: { type: DataTypes.STRING },
+    </p>
+  </div>
 </template>
 
 <script>

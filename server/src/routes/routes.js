@@ -6,8 +6,7 @@ const router =  express.Router();
 
  
 //routes
-router.get('/register', registerController.register)
-// router.post('/register', registerController.register)
+router.post('/register', registerController.register)
 
 router.get('/lab', labController.getLab)
 router.post('/lab', labController.postLab)

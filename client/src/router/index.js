@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../components/Home.vue";
 import About from "../components/About.vue";
 import Lab from "../components/Lab.vue";
-import Guest from "../components/Project.vue";
+import Guest from "../components/Guest.vue";
 import Project from "../components/Project.vue";
 import Register from "../components/Register.vue";
 

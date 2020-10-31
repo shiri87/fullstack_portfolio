@@ -3,7 +3,17 @@
     <!-- nav -->
     <nav>
       <div class="nav-wrapper indigo bg-darken-4">
-        <router-link to="/" class="brand-logo">shiri studio</router-link>
+        <router-link to="/" class="brand-logo">
+          <img class="show-on-small" src="../assets/logo-s.svg" alt=""
+        /></router-link>
+
+        <router-link to="/" class="brand-logo"
+          ><img
+            class="hide-on-med-and-down"
+            src="../assets/logo-w.svg"
+            alt=""
+          />
+        </router-link>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"
           ><i class="fas fa-bars"></i
         ></a>
