@@ -1,21 +1,27 @@
 <template>
-  <footer>
-    <div
-      class="footer-copyright indigo bg-darken-4 grey-text text-lighten-4 row center"
-    >
-      <div class="footer-icons col s12 m4">
+  <footer
+    class="footer-copyright deep-purple accent-2 white-text text-lighten-4 row center valign-wrapper "
+  >
+    <div class="footer-icons col s12 m4">
+      <a href="#">
         <i class="fab fa-github"></i>
+      </a>
+      <a href="#">
         <i class="fab fa-codepen"></i>
+      </a>
+      <a href="#">
         <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#">
         <i class="fas fa-envelope"></i>
-        <i class="fas fa-mobile-alt"></i>
-      </div>
-      <div class="copyright col s12 m4">
-        Shiri Studio © 2020
-      </div>
-      <div class="footer-link col s12 m4">
-        <a class=" grey-text text-lighten-4" href="#!">More Links</a>
-      </div>
+      </a>
+      <a href="#"> <i class="fas fa-mobile-alt"></i> </a>
+    </div>
+    <div class="copyright col s12 m4">
+      Shiri Studio © 2020
+    </div>
+    <div class="footer-link col s12 m4">
+      <a class=" grey-text text-lighten-4" href="#!">More Links</a>
     </div>
   </footer>
 </template>

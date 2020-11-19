@@ -1,3 +1,108 @@
+/* Merriweather / Nanum Gothic Raleway / Roboto
+font-family: 'Merriweather', serif;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;
+ */
+*{
+    font-family: 'Roboto', sans-serif;
+    
+  }
+  #app{
+    width: 100vw;
+    height: 100vw;
+  }
+  #bg{
+    /* position:  absolute !important;
+    z-index: -3; */
+    background-color: #d1c4e9 ;
+    height: 100%;
+    width: 100%;
+    /* background: linear-gradient(0deg, #ADADFF 0%, rgba(97,109,237,0 ) 50%, rgba(77,77,255,1 ) 100%); */
+  } 
+/* #moving-bg{
+position: absolute !important;
+z-index: -1 ;
+top: 0 ;
+left: 0; 
+height: auto !important;
+} */
+
+
+
+/* header */
 .nav-wrapper{
     text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+/* home */
+nav .brand-logo{
+  margin: 1rem;
+}
+nav .brand-logo:hover{
+  -webkit-filter: drop-shadow(5px 5px 3px #333 );
+  filter: drop-shadow(5px 5px 3px #333);}
+
+.contact-icons i{
+  color: #fff;
+  padding:1rem;
+  font-size: 1rem;
+}
+
+/* about */
+/* project */
+/* lab */
+
+/* guest book */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+  }
+  .cards-container .card {
+    margin: 1rem;
+  }
+
+
+/* register */
+.register {
+    margin-top: 30px;
+  }
+  .register .card {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .register label {
+    font-size: 16px;
+    color: #333;
+  }
+  .register input {
+    font-size: 20px;
+  }
+  .register button:hover {
+    font-weight: bold;
+  }
+.msg{
+    font-size: 2rem;
+    /* font-family: 'Merriweather', serif; */
+    font-weight: lighter;
+}
+
+/* footer */
+footer{
+display: block;
+padding: 1rem;
+}
+.footer-icons i{
+  margin-left: 1rem;
+  font-size: 2rem;
+  color: #fff;
+}
+.footer-icons i:hover{
+color : #ccc;}
+
+
+/* setting???  */
+.drag-target{
+  padding: 0;
 }

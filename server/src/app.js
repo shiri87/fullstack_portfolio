@@ -19,9 +19,5 @@ app.use(router)
 // sequelize needs to be sync before server start up
 sequelize.sync().then(()=>{
     app.listen(config.port);
-//     console.log(`server is running ${config.port}`);
+    console.log(`>>>>>>> server is running ${config.port}`);
 });
-
-
-// app.listen(process.env.PORT || 8085);
-// console.log(`Server is running on ${process.env.PORT || 8085}`);

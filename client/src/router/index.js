@@ -6,29 +6,37 @@ import Lab from "../components/Lab.vue";
 import Guest from "../components/Guest.vue";
 import Project from "../components/Project.vue";
 import Register from "../components/Register.vue";
+import Login from '../components/Login.vue'
+import AddLabProject from '../components/AddLabProject.vue'
+import AddGuestbook from '../components/AddGuestbook.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: Home,
   },
   {
     path: "/about",
-    name: "About",
+    name: "about",
     component: About,
   },
   {
     path: "/project",
-    name: "Project",
+    name: "project",
     component: Project,
   },
   {
     path: "/lab",
-    name: "Lab",
+    name: "lab",
     component: Lab,
+  },
+  {
+    path: "/lab/add",
+    name: "AddLabProject",
+    component: AddLabProject,
   },
   {
     path: "/guest",
@@ -36,12 +44,23 @@ const routes = [
     component: Guest,
   },
   {
+    path: "/guest/add",
+    name: "AddGuestbook",
+    component: AddGuestbook,
+  },
+  {
     path: "/register",
     name: "register",
     component: Register,
+  },  
+  {
+    path: "/login",
+    name: "login",
+    component: Login,
   },
-]
 
+]
+          
 const router = new VueRouter({
   routes,
 })

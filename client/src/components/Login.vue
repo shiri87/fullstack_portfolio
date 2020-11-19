@@ -2,19 +2,20 @@
   <div class="register container">
     <div class="row">
       <form class="col s12 12 offset-14">
-        <div class="card-panel teal lighten-2 white-text">
-          <div class="msg">Register : Are you willing to test?</div>
-          <div v-html="error" class="error">Error _ try again</div>
-          <!-- Errors display div-->
+        <div class="card-panel deep-purple lighten-2 white-text">
+          <div class="msg">Login : Hello my friend :)</div>
+          <div v-html="error" class="error mt-3">
+            login error : {{ this.error }}
+          </div>
         </div>
         <div class="card">
           <div class="card-action">
             <div class="form-field">
-              <label for="email">Email</label>
+              <label for="email">Your Email</label>
               <input type="email" name="email" id="email" v-model="email" />
             </div>
             <div class="form-field">
-              <label for="password">Password</label>
+              <label for="password">Your Password</label>
               <input
                 type="password"
                 name="password"
@@ -23,8 +24,12 @@
               />
             </div>
             <div class="form-field center-align">
-              <button class="btn-large teal" type="submit" @click="register">
-                Register
+              <button
+                class="btn-large deep-purple"
+                type="submit"
+                @click="login"
+              >
+                login
               </button>
             </div>
           </div>
@@ -37,30 +42,26 @@
 <script>
 import AuthenticationService from "../services/AuthenticationService";
 export default {
-  name: "register",
+  name: "Login",
   data() {
     return {
-      email: "shiri@gmail.com",
+      email: "test@gmail.com",
       password: "password0000",
       error: null,
     };
   },
   methods: {
-    async register() {
-      console.log("dgfydrftghdftghdgfhcdgf");
+    async login() {
+      // console.log("ddddddd");
       try {
-        console.log(this.email);
-        console.log(this.password);
-        const response = await AuthenticationService.register({
+        const response = await AuthenticationService.login({
           email: this.email,
           password: this.password,
         });
+        console.log(response);
+
         this.$store.dispatch("setToken", response.data.token);
         this.$store.dispatch("setUser", response.data.user);
-        // this.$router.go("/");
-        // this.$router.push({ name: "lab" });
-        //axios -->  property called data
-        console.log(response.data);
       } catch (error) {
         console.log(error);
         this.error = error.response.data.error;
@@ -70,8 +71,7 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .error {
   color: orangered;
   font-size: 2rem;
