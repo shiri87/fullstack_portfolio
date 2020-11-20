@@ -1,10 +1,18 @@
 <template>
-  <h1>Not Found 404 error</h1>
+  <div class="container">
+    <h1>Not Found 404 error <i class="fas fa-meh"></i></h1>
+    <h2>Ooooooooooooooops</h2>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "NotFound",
+};
 </script>
 
-<style>
+<style scoped>
+* {
+  color: #fff;
+}
 </style>

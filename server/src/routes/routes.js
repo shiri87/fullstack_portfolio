@@ -13,8 +13,10 @@ router.post('/login',registerController.login)
 
 
 router.get('/lab', LabController.getAllLabProjects)
+router.get('/lab/:labProjectId', LabController.getLabProjectById)
 router.post('/lab', LabController.postLabProject)
-router.put('/lab', LabController.putLab)
+router.put('/lab/:labProjectId', LabController.putLabProject)
+
 router.delete('/lab', LabController.deleteLab)
 
 router.get('/guest', GuestController.getAllGuestbooks)

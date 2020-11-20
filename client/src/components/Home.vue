@@ -2,9 +2,7 @@
   <!-- <div class="parallax">
     <div class="parallax-container center-align"> -->
   <div class="container center-align white-text">
-    <h1>
-      Hello world, I am Shiri.
-    </h1>
+    <h1>Hello world, I am Shiri.</h1>
     <h4>
       I am a newb programmer Mebourne-based.<br />
       Also I am a expieced designer.
@@ -24,9 +22,7 @@
       numquam quod, facere voluptatum tenetur ullam aliquid consequuntur?
       Corporis, optio.
     </p>
-    <h4>
-      Check this out!
-    </h4>
+    <h4>Check this out!</h4>
     <!-- </div> -->
   </div>
 </template>
@@ -34,7 +30,7 @@
 <script>
 export default {
   name: "Home",
-  components: {}
+  components: {},
 };
 </script>
 

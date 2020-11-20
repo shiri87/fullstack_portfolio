@@ -36,15 +36,29 @@
               </div>
             </div>
             <div class="col m6 s12">
-              <div class="card-title">
-                {{ labProject.project }}
-              </div>
+              <h1>{{ labProject.project }}</h1>
               <p>{{ labProject.category }}</p>
 
-              <small>Tags : {{ labProject.tags }}</small>
+              <p>Tags : {{ labProject.tags }}</p>
               <p>{{ labProject.description }}</p>
-              <small>version : {{ labProject.version }}</small>
-              <div class="btn btn-float deep-purple">detail</div>
+              <p>version : {{ labProject.version }}</p>
+              <hr />
+              <router-link
+                :to="'/lab/' + labProject.id"
+                class="btn btn-float deep-purple"
+                >detail</router-link
+              >
+              <!--
+                :to="'/' + labProject.id"
+            {
+    path: "/lab/:labProjectId",
+    name: "LabDetail",
+    component: LabDetail,
+  },
+           <router-link
+              :to="'/browse/' + instructionGuide.id"
+              class="mr-2 w-100 btn btn-primary"
+            >View Instructions</router-link> -->
             </div>
           </div>
         </div>

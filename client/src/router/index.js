@@ -8,7 +8,10 @@ import Project from "../components/Project.vue";
 import Register from "../components/Register.vue";
 import Login from '../components/Login.vue'
 import AddLabProject from '../components/AddLabProject.vue'
+import LabDetail from '../components/LabDetail.vue'
+import EditLabProject from '../components/EditLabProject.vue'
 import AddGuestbook from '../components/AddGuestbook.vue'
+import NotFound from '../components/NotFound.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +42,16 @@ const routes = [
     component: AddLabProject,
   },
   {
+    path: "/lab/:labProjectId",
+    name: "LabDetail",
+    component: LabDetail,
+  },
+  {
+    path: "/lab/:labProjectId/edit",
+    name: "EditLabProject",
+    component: EditLabProject,
+  },
+  {
     path: "/guest",
     name: "guest",
     component: Guest,
@@ -57,6 +70,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: Login,
+  },
+  {
+    path: "*",
+    name: "NotFound",
+    component: NotFound,
   },
 
 ]

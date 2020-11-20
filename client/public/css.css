@@ -3,38 +3,43 @@ font-family: 'Merriweather', serif;
 font-family: 'Nanum Gothic', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif;
- */
+*/
 *{
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+  body{
+      background-color: #d1c4e9 ;
+    }
+
     
-  }
   #app{
     width: 100vw;
     height: 100vw;
   }
   #bg{
-    /* position:  absolute !important;
-    z-index: -3; */
-    background-color: #d1c4e9 ;
+    position:  relative !important;
+    z-index: 1;
     height: 100%;
     width: 100%;
-    /* background: linear-gradient(0deg, #ADADFF 0%, rgba(97,109,237,0 ) 50%, rgba(77,77,255,1 ) 100%); */
   } 
-/* #moving-bg{
-position: absolute !important;
-z-index: -1 ;
-top: 0 ;
-left: 0; 
-height: auto !important;
-} */
+  /* #moving-bg{
+    position: absolute !important;
+    z-index: -1 ;
+    top: 0 ;
+    left: 0; 
+    height: auto !important;
+  } */
 
-
+  .container {
+    margin-bottom: 3rem;
+  }
 
 /* header */
 .nav-wrapper{
     text-transform: uppercase;
     position: relative;
     z-index: 1;
+    
 }
 /* home */
 nav .brand-logo{
@@ -51,7 +56,16 @@ nav .brand-logo:hover{
 }
 
 /* about */
+.icons{
+  color: #fff;
+  font-size: 5rem;
+  display: flex;
+}
+.icons i{
+  padding-left: 2rem;
+}
 /* project */
+
 /* lab */
 
 /* guest book */
@@ -90,7 +104,10 @@ nav .brand-logo:hover{
 
 /* footer */
 footer{
-display: block;
+display: flex;
+
+/* position: absolute; */
+bottom: 0;
 padding: 1rem;
 }
 .footer-icons i{
@@ -105,4 +122,8 @@ color : #ccc;}
 /* setting???  */
 .drag-target{
   padding: 0;
+}
+
+.mr-1{
+  margin-right: 1rem;
 }

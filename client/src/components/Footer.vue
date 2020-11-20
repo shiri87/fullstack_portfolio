@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="footer-copyright deep-purple accent-2 white-text text-lighten-4 row center valign-wrapper "
+    class="footer-copyright deep-purple accent-2 white-text text-lighten-4 row center valign-wrapper"
   >
     <div class="footer-icons col s12 m4">
       <a href="#">
@@ -17,18 +17,16 @@
       </a>
       <a href="#"> <i class="fas fa-mobile-alt"></i> </a>
     </div>
-    <div class="copyright col s12 m4">
-      Shiri Studio © 2020
-    </div>
+    <div class="copyright col s12 m4">Shiri Studio © 2020</div>
     <div class="footer-link col s12 m4">
-      <a class=" grey-text text-lighten-4" href="#!">More Links</a>
+      <a class="grey-text text-lighten-4" href="#!">More Links</a>
     </div>
   </footer>
 </template>
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
 };
 </script>
 
