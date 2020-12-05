@@ -1,7 +1,8 @@
 <template>
-  <!-- vuelidate -->
-  <!-- top msg from host -->
-  <div class="add container deep-purple-text">
+  <!-- vuelidate doc version -->
+  <div class="contianer">
+    <!-- top msg from host -->
+
     <div class="card-panel deep-purple lighten-2 white-text">
       <div class="msg">
         <h1>Welcome to Shiri studio Laboratory.</h1>
@@ -12,161 +13,67 @@
       </div>
     </div>
     <!-- form -->
-    <!--v-model - Binds the data to the validator -->
-    <!--:state - Stores the logic that checks if the field data is valid -->
 
-    <form action="">
-      <div class="white deep-purple-text text-darken-4">
-        <!-- input project -->
+    <div class="add container deep-purple-text">
+      <form>
+        <!-- first row -->
         <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
-                <!-- v-model="labProject.project" -->
-                <input
-                  id="project"
-                  type="text"
-                  class="validate"
-                  v-model="$v.labProject.project.$"
-                  :state="
-                    $v.labProject.project.$dirty
-                      ? !$v.labProject.project.$error
-                      : null
-                  "
-                  aria-describedby="project-feedback"
-                />
-                <p id="project-feedback">
-                  the project name is required | minimum length 3
-                </p>
+          <div
+            class="form-group"
+            :class="{ 'form-group--error': $v.LabProjects.project.$error }"
+          >
+            <label class="form__label">project</label>
+            <input
+              class="form__input"
+              v-model.trim="$v.LabProjects.project.$model"
+            />
+          </div>
+          <div class="error" v-if="!$v.LabProjects.project.required">
+            Field is required
+          </div>
+          <div class="error" v-if="!$v.LabProjects.project.minLength">
+            project must have at least
+            {{ $v.LabProjects.project.$params.minLength.min }} letters.
+          </div>
+          <tree-view
+            :data="$v.LabProjects.project"
+            :options="{ rootObjectKey: '$v.LabProjects.project', maxDepth: 2 }"
+          ></tree-view>
 
-                <label for="project">Enter the name of your Project</label>
-              </div>
-              <div class="input-field col s6">
-                <!-- v-model="labProject.category" -->
-                <input
-                  id="category"
-                  type="text"
-                  class="validate"
-                  v-model="$v.labProject.category.$"
-                  :state="
-                    $v.labProject.category.$dirty
-                      ? !$v.labProject.category.$error
-                      : null
-                  "
-                  aria-describedby="category-feedback"
-                />
-                <p id="project-category">
-                  the project category is required | minimum length 3
-                </p>
-                <label for="category"
-                  >Enter project's category | Front-end, Back-end, Fullstack,
-                  UI/UX, Data structure, etc
-                </label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s6">
-                <!-- v-model="labProject.tags" -->
-                <input
-                  id="tags"
-                  type="text"
-                  class="validate"
-                  v-model="$v.labProject.tags.$"
-                  :state="
-                    $v.labProject.tags.$dirty
-                      ? !$v.labProject.tags.$error
-                      : null
-                  "
-                  aria-describedby="tags-feedback"
-                />
-                <p id="tags-feedback">
-                  the project tag is required | minimum length 3
-                </p>
-                <label for="tags"
-                  >Enter tage of your project | #React #Vue #Vanilla js,
-                  etc</label
-                >
-              </div>
-              <div class="input-field col s6">
-                <!-- v-model="labProject.version" -->
-                <input
-                  id="version"
-                  type="text"
-                  class="validate"
-                  v-model="$v.labProject.version.$"
-                  :state="
-                    $v.labProject.version.$dirty
-                      ? !$v.labProject.version.$error
-                      : null
-                  "
-                  aria-describedby="version-feedback"
-                />
-                <p id="version-feedback">
-                  the project version is required | minimum length 3
-                </p>
-                <label for="version"
-                  >Enter project's version | 0.1.0 (Major.Minor.Patch)
-                </label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <!-- v-model="labProject.photo" -->
-                <input
-                  id="photo"
-                  type="text"
-                  class="validate"
-                  v-model="$v.labProject.photo.$"
-                  :state="
-                    $v.labProject.photo.$dirty
-                      ? !$v.labProject.photo.$error
-                      : null
-                  "
-                  aria-describedby="photo-feedback"
-                />
-                <p id="project-feedback">
-                  the project photo is required | minimum length 3
-                </p>
-                <label for="photo"
-                  >Enter project's photo | only src source can be attachec
-                  :)</label
-                >
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <!-- v-model="labProject.description" -->
-                <input
-                  id="description"
-                  type="text"
-                  class="validate"
-                  v-model="$v.labProject.description.$"
-                  :state="
-                    $v.labProject.description.$dirty
-                      ? !$v.labProject.description.$error
-                      : null
-                  "
-                  aria-describedby="description-feedback"
-                />
-                <p id="description-feedback">
-                  the project description is required | minimum length 3
-                </p>
-                <label for="description">Enter project's description </label>
-              </div>
-            </div>
-          </form>
+          <div
+            class="form-group"
+            :class="{ 'form-group--error': $v.labProjects.category.$error }"
+          >
+            <label class="form__label">category</label>
+            <input
+              class="form__input"
+              v-model.trim="$v.labProjects.category.$model"
+            />
+          </div>
+          <div class="error" v-if="!$v.labProjects.category.required">
+            Field is required
+          </div>
+          <div class="error" v-if="!$v.labProjects.category.minLength">
+            category must have at least
+            {{ $v.labProjects.category.$params.minLength.min }} letters.
+          </div>
+          <tree-view
+            :data="$v.labProjects.category"
+            :options="{ rootObjectKey: '$v.labProjects.category', maxDepth: 2 }"
+          ></tree-view>
         </div>
+
         <button @click="create" width="100" class="btn btn-large deep-purple">
           add Lab project
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
 import LabProjectsServices from "../services/LabProjectsServices";
-import { validationMixin } from "vuelidate";
+// import { validationMixin } from "vuelidate";
 import { required, minLength } from "vuelidate/lib/validators";
 export default {
   name: "AddLabProject",
@@ -185,7 +92,7 @@ export default {
       },
     };
   },
-  mixins: [validationMixin],
+  // mixins: [validationMixin],
   validations: {
     labProject: {
       project: { required, minLength: minLength(3) },

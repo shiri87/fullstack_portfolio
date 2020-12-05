@@ -1,19 +1,58 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <form class="col m12 s12">
-        <div class="card-panel deep-purple lighten-2 white-text">
-          <div class="msg">
-            Hi I am shiri, please leave your message
-            <button class="btn grey lighten-3 black-text">Click to Add</button>
-          </div>
-        </div>
-      </form>
-    </div>
+ <v-container>
+      <!-- colored-border -->
+    <v-alert
+      border="top"
+      colored
+      color="teal accent-3"
+      elevation="2"
+      dark
+    >   <h1>
+      <v-icon x-large>fas fa-address-book</v-icon>
+    Hello! I am Shiri,<br/>please leave me a message.</h1>
+      <v-btn
+      color="white"
+      class="ma-2 white--text">
+              <router-link :to="'/guest/add'">
+      <v-icon
+        left
+        dark
+      >fas fa-id-badge
+      </v-icon >add GUEST BOOK</router-link>
+            </v-btn>
+    </v-alert>
+     <v-row>
+      <v-col  
+        v-for="guest in guests"
+        :key="guest.id"
+      class="d-flex child-flex"
+      cols="4"> 
+      <v-card
+        max-width="400"
+        class="mx-auto"
+      >
+          <v-img
+              class="activator"
+              :src="guest.photo"
+              :alt="'guest.nickname' + 's photo'"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+            height="200px"
+            />
+        <v-card-title>
+            {{ guest.nickname }}
+          </v-card-title>
+          <v-card-text class="text--primary">
+          <small>Date : {{ guest.date }}</small>
+          <p>{{ guest.msg }}</p>
+        
+        </v-card-text>
+      </v-card>
+      </v-col>
+     </v-row>
 
-    <div class="cards-container">
+
       <!-- <div class="s12 m4"> -->
-      <div
+      <!-- <div
         class="card grey white-text hoverable"
         v-for="guest in guests"
         :key="guest.id"
@@ -32,11 +71,8 @@
 
           <small>Date : {{ guest.date }}</small>
           <p>{{ guest.msg }}</p>
-        </div>
-      </div>
-      <!-- </div> -->
-    </div>
-  </div>
+        </div> -->
+  </v-container>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <!-- vuelidate -->
+  <!-- vuelidate Dan version-->
   <!-- top msg from host -->
   <div class="add container deep-purple-text">
     <div class="card-panel deep-purple lighten-2 white-text">
@@ -26,7 +26,7 @@
                 <input
                   id="project"
                   type="text"
-                  class="validate"
+                  v-bind:class="{ error: $v.labProject.project.$error }"
                   v-model="$v.labProject.project.$model"
                   :state="
                     $v.labProject.project.$dirty
@@ -35,7 +35,7 @@
                   "
                   aria-describedby="project-feedback"
                 />
-                <p id="project-feedback">
+                <p v-bind:class="{ error: $v.labProject.project.$error }">
                   the project name is required | minimum length 3
                 </p>
 
@@ -166,10 +166,11 @@
 
 <script>
 import LabProjectsServices from "../services/LabProjectsServices";
+// Validation module
 import { validationMixin } from "vuelidate";
 import { required, minLength } from "vuelidate/lib/validators";
 export default {
-  name: "EditLabProject",
+  name: "AddLabProject",
   data() {
     return {
       labProject: {
@@ -197,8 +198,12 @@ export default {
     async create() {
       this.$v.labProject.$touch();
       if (this.$v.labProject.$anyError) {
+        setTimeout(() => {
+          console.log("vulidate");
+        }, 500);
         return;
       }
+
       // Posts data
       try {
         //postLabProject
@@ -213,5 +218,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.error {
+  border: red 1px solid !important;
+  color: red;
+}
 </style>

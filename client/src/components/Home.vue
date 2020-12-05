@@ -1,7 +1,6 @@
 <template>
-  <!-- <div class="parallax">
-    <div class="parallax-container center-align"> -->
-  <div class="container center-align white-text">
+    <v-container>
+      <!-- <v-parallax> </v-parallax> -->
     <h1>Hello world, I am Shiri.</h1>
     <h4>
       I am a newb programmer Mebourne-based.<br />
@@ -15,23 +14,33 @@
       alt="Shiri Avata"
       class="responsive-img"
       width="400rem"
-    />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-      soluta unde placeat alias quos dicta sapiente qui dolore dolor, voluptatem
-      numquam quod, facere voluptatum tenetur ullam aliquid consequuntur?
-      Corporis, optio.
-    </p>
-    <h4>Check this out!</h4>
-    <!-- </div> -->
-  </div>
+    />  
+    </v-container>
 </template>
 
 <script>
 export default {
   name: "Home",
   components: {},
-};
+  data () {
+  return {
+    items: [
+      {
+        src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+          },
+          {
+            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+          },
+          {
+            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+          },
+          {
+            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+          },
+        ],
+      }
+    },
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,27 +1,36 @@
 <template>
-  <footer
-    class="footer-copyright deep-purple accent-2 white-text text-lighten-4 row center valign-wrapper"
+      <v-footer
+    dark
+    padless
   >
-    <div class="footer-icons col s12 m4">
-      <a href="#">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="#">
-        <i class="fab fa-codepen"></i>
-      </a>
-      <a href="#">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="#">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="#"> <i class="fas fa-mobile-alt"></i> </a>
-    </div>
-    <div class="copyright col s12 m4">Shiri Studio © 2020</div>
-    <div class="footer-link col s12 m4">
-      <a class="grey-text text-lighten-4" href="#!">More Links</a>
-    </div>
-  </footer>
+    <v-card
+      flat
+      class="deep-purple accent-2 white--text text-lighten-4 row center valign-wrapper"
+    >
+      <v-card-text>
+        <v-btn
+          class="mx-4 white--text"
+          icon
+        >
+          <v-icon class="mr-2" size="24px">fab fa-github</v-icon>
+          <v-icon class="mr-2" size="24px">fab fa-codepen</v-icon>
+          <v-icon class="mr-2" size="24px">fab fa-instagram</v-icon>
+          <v-icon class="mr-2" size="24px">fas fa-envelope</v-icon>
+          <v-icon class="mr-2" size="24px">fas fa-mobile-alt</v-icon>
+        </v-btn>
+      </v-card-text>
+
+      <v-card-text class="white--text pt-0">
+        Fullstack project :  Vue | Vufify | Vueliadte | Node | Express | SQLite | Sequelize | Joi | jwtToken
+      </v-card-text>
+
+      <v-divider></v-divider>
+
+      <v-card-text class="white--text">
+        {{ new Date().getFullYear() }} <v-icon>fa fa-copyright</v-icon> <strong>Shiri Studio</strong>
+      </v-card-text>
+    </v-card>
+  </v-footer>
 </template>
 
 <script>
@@ -31,13 +40,5 @@ export default {
 </script>
 
 <style>
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
 
-main {
-  flex: 1 0 auto;
-}
 </style>

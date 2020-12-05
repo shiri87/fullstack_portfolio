@@ -1,90 +1,63 @@
 <template>
-  <header class="navbar-fixed">
-    <!-- nav -->
-    <nav>
-      <div class="nav-wrapper deep-purple accent-2">
-        <router-link to="/" class="brand-logo">
-          <img
-            class="hide-on-large-only show-on-medium-and-down"
-            src="../assets/logo-s.svg"
-            alt="Shiri Studio Logo"
-        /></router-link>
+  <header>
 
-        <router-link to="/" class="brand-logo"
-          ><img
-            class="show-on-large hide-on-med-and-down"
+    <v-toolbar flat dense dark color="deep-purple accent-2">
+    <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"><router-link to="/" class="brand-logo"
+          >
+          <img
             src="../assets/logo-w.svg"
             alt="Shiri Studio Logo"
-          />
-        </router-link>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
-          ><i class="fas fa-bars"></i
-        ></a>
-        <ul class="right hide-on-med-and-down">
-          <li>
-            <router-link to="/">Home</router-link>
-          </li>
-          <li>
-            <router-link to="/about">About</router-link>
-          </li>
-          <li><router-link to="/project">Project</router-link></li>
-          <li><router-link to="/lab">Lab</router-link></li>
-          <li><router-link to="/guest">GuestBook</router-link></li>
-          <li>
-            <router-link
+          /></router-link>
+    </v-toolbar-side-icon>
+    <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-sm-and-up"><router-link to="/" class="brand-logo"
+          >
+          <img
+            src="../assets/logo-s.svg"
+            alt="Shiri Studio Logo"
+          /></router-link>
+    </v-toolbar-side-icon> -->
+    <!-- <v-toolbar-title></v-toolbar-title> -->
+    <v-spacer></v-spacer>
+    <v-toolbar-items class="hidden-sm-and-down">
+     <v-btn text>  <router-link to="/">Home</router-link></v-btn>  
+     <v-btn text>  <router-link to="/about">About</router-link> </v-btn>
+     <v-btn text>  <router-link to="/project">Project</router-link> </v-btn>
+     <v-btn text>  <router-link to="/lab">Lab</router-link> </v-btn>
+     <v-btn text>  <router-link to="/guest">GuestBook</router-link> </v-btn>
+       
+        <v-btn text>    <router-link
               v-if="!$store.state.isUserLoggedIn"
               to="/login"
               class="btn grey mr-2"
               >Login</router-link
-            >
+            > </v-btn>
 
-            <router-link
+         <v-btn text>   <router-link
               v-if="!$store.state.isUserLoggedIn"
               to="/register"
               class="btn"
               >Register</router-link
-            >
+            > </v-btn>
 
-            <router-link
+          <v-btn text>  <router-link
               v-if="$store.state.isUserLoggedIn"
               class="btn"
               @click="logout"
               >Logout</router-link
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
+            > </v-btn>
+      
+    </v-toolbar-items>
+  </v-toolbar>
+  
+    <v-navigation-drawer
+      v-model="drawer"
+      temporary
+      absolute
+      width = "200"
+      id = "drawer"
+    >
+    </v-navigation-drawer>
 
-    <ul class="sidenav" id="mobile-demo">
-      <li>
-        <router-link to="/">Home</router-link>
-      </li>
-      <li>
-        <router-link to="/about">About</router-link>
-      </li>
-      <li><router-link to="/project">Project</router-link></li>
-      <li><router-link to="/lab">Lab</router-link></li>
-      <li><router-link to="/guest">GuestBook</router-link></li>
-      <li>
-        <router-link
-          v-if="!$store.state.isUserLoggedIn"
-          to="/login"
-          class="btn grey mr-2"
-          >Login</router-link
-        >
-
-        <router-link
-          v-if="!$store.state.isUserLoggedIn"
-          to="/register"
-          class="btn"
-          >Register</router-link
-        >
-      </li>
-      <button v-if="$store.state.isUserLoggedIn" class="btn" @click="logout">
-        Logout
-      </button>
-    </ul>
   </header>
 </template>
 

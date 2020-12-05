@@ -1,6 +1,7 @@
 <template>
-  <div class="container">
-    <div class="row">
+  <v-container>
+    <h1>about me</h1>
+    <!-- <div class="row">
       <ul class="icons">
         <li><i class="fab fa-js"></i></li>
         <li><i class="fab fa-react"></i></li>
@@ -32,8 +33,8 @@
     <h4>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error totam
       cumque architecto ducimus optio, enim quibusdam distinctio quo fugit
-    </h4>
-  </div>
+    </h4> -->
+  </v-container>
 </template>
 
 <script>
@@ -44,7 +45,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-* {
-  color: #fff;
-}
 </style>
