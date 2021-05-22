@@ -1,6 +1,5 @@
 <template>
-    <v-container>
-      <!-- <v-parallax> </v-parallax> -->
+  <v-container>
     <h1>Hello world, I am Shiri.</h1>
     <h4>
       I am a newb programmer Mebourne-based.<br />
@@ -14,35 +13,16 @@
       alt="Shiri Avata"
       class="responsive-img"
       width="400rem"
-    />  
-    </v-container>
+    />
+  </v-container>
 </template>
 
 <script>
 export default {
   name: "Home",
-  components: {},
-  data () {
-  return {
-    items: [
-      {
-        src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          },
-        ],
-      }
-    },
-  }
+  components: {}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>

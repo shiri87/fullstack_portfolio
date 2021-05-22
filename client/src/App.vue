@@ -2,12 +2,11 @@
   <div id="app">
     <div id="bg">
       <Header />
-
       <particles-bg
         id="moving-bg"
         type="custom"
         :canvas="{
-          background: 'linear-gradient( #6666FF, #d1c4e9)',
+          background: 'linear-gradient( #6666FF, #d1c4e9)'
         }"
         :width="40"
         :height="40"
@@ -21,7 +20,6 @@
 </template>
 
 <script>
-import M from "materialize-css";
 import { ParticlesBg } from "particles-bg-vue";
 
 //components
@@ -33,9 +31,9 @@ export default {
   components: {
     Header,
     Footer,
-    ParticlesBg,
+    ParticlesBg
   },
-  data: function () {
+  data: function() {
     return {
       config: {
         num: [15, 40],
@@ -50,18 +48,11 @@ export default {
         position: "all", // screen or all
         cross: "dead",
         random: 70,
-        rotate: 10,
-      },
+        rotate: 10
+      }
     };
-  },
-  // Auto Init allows you to initialize all of the Materialize Components with a single function call. It is important to note that you cannot pass in options using this method.
-  //context	_defaultdocument.body	DOM | Element to search within for components.
-  mounted() {
-    M.AutoInit();
-    M.updateTextFields();
-  },
+  }
 };
 </script>
 
-<style >
-</style>
+<style></style>

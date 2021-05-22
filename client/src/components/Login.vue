@@ -1,5 +1,48 @@
 <template>
-  <div class="register container">
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-alert colored color="deep-purple accent-3" elevation="2" dark>
+          <h2>Login : Hello my friend :)</h2>
+          <div v-html="error" class="error">login error : {{ this.error }}</div>
+          {{ msg }}
+        </v-alert>
+
+        <form>
+          <v-text-field
+            v-modle="email"
+            :error-messages="emailErrors"
+            label="email"
+            type="email"
+            name="email"
+            id="email"
+            required
+          >
+          </v-text-field>
+          <v-text-field
+            v-model="password"
+            :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+            :rules="[rules.required, rules.min]"
+            hint="At least 8 characters"
+            counter
+            type="password"
+            name="password"
+            id="password"
+            label="password"
+            required
+          >
+          </v-text-field>
+          <v-btn type="submit" @click="login">
+            login
+          </v-btn>
+          <v-btn @click="clear">
+            clear
+          </v-btn>
+        </form>
+      </v-col>
+    </v-row>
+  </v-container>
+  <!-- <div class="register container">
     <div class="row">
       <form class="col s12 12 offset-14">
         <div class="card-panel deep-purple lighten-2 white-text">
@@ -36,7 +79,7 @@
         </div>
       </form>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -45,9 +88,16 @@ export default {
   name: "Login",
   data() {
     return {
-      email: "test@gmail.com",
-      password: "password0000",
+      email: "",
+      password: "",
       error: null,
+      rules: {
+        required: value => !!value || "Required.",
+        min: v => v.length >= 8 || "Min 8 characters",
+        emailMatch: () => `The email and password you entered don't match`
+      },
+      show: null,
+      msg: "login here"
     };
   },
   methods: {
@@ -56,18 +106,24 @@ export default {
       try {
         const response = await AuthenticationService.login({
           email: this.email,
-          password: this.password,
+          password: this.password
         });
         console.log(response);
 
         this.$store.dispatch("setToken", response.data.token);
         this.$store.dispatch("setUser", response.data.user);
+        this.msg = "your logged in";
       } catch (error) {
         console.log(error);
         this.error = error.response.data.error;
+        this.msg = "fall";
       }
     },
-  },
+    clear() {
+      this.$v.$reset();
+      (this.email = ""), (this.password = "");
+    }
+  }
 };
 </script>
 

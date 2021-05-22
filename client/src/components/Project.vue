@@ -1,6 +1,8 @@
 <template>
   <v-container>
     <h1>project</h1>
+    <v-icon class="mr-2" size="24px">fab fa-github</v-icon>
+
   </v-container>
 </template>
 

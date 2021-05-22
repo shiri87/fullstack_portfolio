@@ -22,8 +22,8 @@ module.exports = {
 
     } catch (err) {
       res.status(400).send({
-        error: "this email account is already in use",
-        // error: err // real err console in postman
+        // error: "this email account is already in use",
+        error: err // real err console in postman
       })
     }
   },

@@ -1,6 +1,8 @@
 <template>
   <v-container>
     <h1>about me</h1>
+    <v-icon class="mr-2" size="24px">fab fa-github</v-icon>
+
     <!-- <div class="row">
       <ul class="icons">
         <li><i class="fab fa-js"></i></li>
