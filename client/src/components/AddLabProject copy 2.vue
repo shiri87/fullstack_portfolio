@@ -1,7 +1,5 @@
-
-
 <template>
-  <!-- v-model="labProject.project" -->
+  <!-- vuelidate Dan version-->
   <!-- top msg from host -->
   <div class="add container deep-purple-text">
     <div class="card-panel deep-purple lighten-2 white-text">
@@ -24,17 +22,17 @@
           <form class="col s12">
             <div class="row">
               <div class="input-field col s6">
-                <!-- v-model="$v.labProject.project.$"
-                  :state="
-                    $v.labProject.project.$dirty
-                      ? !$v.labProject.project.$error
-                      : null
-                  " -->
+                <!-- v-model="labProject.project" -->
                 <input
                   id="project"
                   type="text"
                   class="validate"
-                  v-model="labProject.project"
+                  v-model="$v.labProject.project.$model"
+                  :state="
+                    $v.labProject.project.$dirty
+                      ? !$v.labProject.project.$error
+                      : null
+                  "
                   aria-describedby="project-feedback"
                 />
                 <p id="project-feedback">
@@ -44,17 +42,17 @@
                 <label for="project">Enter the name of your Project</label>
               </div>
               <div class="input-field col s6">
-                <!-- v-model="$v.labProject.category.$"
-                  :state="
-                    $v.labProject.category.$dirty
-                      ? !$v.labProject.category.$error
-                      : null
-                  " -->
+                <!-- v-model="labProject.category" -->
                 <input
                   id="category"
                   type="text"
                   class="validate"
-                  v-model="labProject.category"
+                  v-model="$v.labProject.category.$model"
+                  :state="
+                    $v.labProject.category.$dirty
+                      ? !$v.labProject.category.$error
+                      : null
+                  "
                   aria-describedby="category-feedback"
                 />
                 <p id="project-category">
@@ -68,17 +66,17 @@
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <!-- v-model="$v.labProject.tags.$"
-                  :state="
-                    $v.labProject.tags.$dirty
-                      ? !$v.labProject.tags.$error
-                      : null
-                  " -->
+                <!-- v-model="labProject.tags" -->
                 <input
                   id="tags"
                   type="text"
                   class="validate"
-                  v-model="labProject.tags"
+                  v-model="$v.labProject.tags.$model"
+                  :state="
+                    $v.labProject.tags.$dirty
+                      ? !$v.labProject.tags.$error
+                      : null
+                  "
                   aria-describedby="tags-feedback"
                 />
                 <p id="tags-feedback">
@@ -90,17 +88,17 @@
                 >
               </div>
               <div class="input-field col s6">
-                <!-- v-model="$v.labProject.version.$"
-                  :state="
-                    $v.labProject.version.$dirty
-                      ? !$v.labProject.version.$error
-                      : null
-                  " -->
+                <!-- v-model="labProject.version" -->
                 <input
                   id="version"
                   type="text"
                   class="validate"
-                  v-model="labProject.version"
+                  v-model="$v.labProject.version.$model"
+                  :state="
+                    $v.labProject.version.$dirty
+                      ? !$v.labProject.version.$error
+                      : null
+                  "
                   aria-describedby="version-feedback"
                 />
                 <p id="version-feedback">
@@ -113,17 +111,17 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <!-- v-model="$v.labProject.photo.$"
-                  :state="
-                    $v.labProject.photo.$dirty
-                      ? !$v.labProject.photo.$error
-                      : null
-                  " -->
+                <!-- v-model="labProject.photo" -->
                 <input
                   id="photo"
                   type="text"
                   class="validate"
-                  v-model="labProject.photo"
+                  v-model="$v.labProject.photo.$model"
+                  :state="
+                    $v.labProject.photo.$dirty
+                      ? !$v.labProject.photo.$error
+                      : null
+                  "
                   aria-describedby="photo-feedback"
                 />
                 <p id="project-feedback">
@@ -137,17 +135,17 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <!-- v-model="$v.labProject.description.$"
-                  :state="
-                    $v.labProject.description.$dirty
-                      ? !$v.labProject.description.$error
-                      : null
-                  " -->
+                <!-- v-model="labProject.description" -->
                 <input
                   id="description"
                   type="text"
                   class="validate"
-                  v-model="labProject.description"
+                  v-model="$v.labProject.description.$model"
+                  :state="
+                    $v.labProject.description.$dirty
+                      ? !$v.labProject.description.$error
+                      : null
+                  "
                   aria-describedby="description-feedback"
                 />
                 <p id="description-feedback">
@@ -168,13 +166,11 @@
 
 <script>
 import LabProjectsServices from "../services/LabProjectsServices";
+// Validation module
 import { validationMixin } from "vuelidate";
 import { required, minLength } from "vuelidate/lib/validators";
 export default {
   name: "AddLabProject",
-  props: {
-    msg: String,
-  },
   data() {
     return {
       labProject: {
@@ -202,8 +198,12 @@ export default {
     async create() {
       this.$v.labProject.$touch();
       if (this.$v.labProject.$anyError) {
+        setTimeout(() => {
+          console.log("vulidate");
+        }, 500);
         return;
       }
+
       // Posts data
       try {
         //postLabProject

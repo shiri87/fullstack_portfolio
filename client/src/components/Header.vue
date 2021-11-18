@@ -6,14 +6,14 @@
         <router-link to="/" class="brand-logo">
           <img
             class="hide-on-large-only show-on-medium-and-down"
-            src="../assets/logo-s.svg"
+            src="../assets/logo-s.png"
             alt="Shiri Studio Logo"
         /></router-link>
 
         <router-link to="/" class="brand-logo"
           ><img
             class="show-on-large hide-on-med-and-down"
-            src="../assets/logo-w.svg"
+            src="../assets/logo-w.png"
             alt="Shiri Studio Logo"
           />
         </router-link>

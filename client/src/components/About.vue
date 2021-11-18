@@ -23,15 +23,13 @@
           I am a <small>(newb)</small> programmer.
         </h2>
         <h4>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error totam
-          cumque architecto ducimus optio, enim quibusdam distinctio quo fugit
+          Creative, responsible, and proactive Web Developer with a strong academic background. Comfortable with a variety of technologies, and keen to learn and master new ones.
         </h4>
       </div>
     </div>
     <hr />
-    <h4>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error totam
-      cumque architecto ducimus optio, enim quibusdam distinctio quo fugit
+    <h4 class="center">
+      Keeping the coding dream alive
     </h4>
   </div>
 </template>

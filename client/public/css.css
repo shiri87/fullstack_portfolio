@@ -14,7 +14,7 @@ font-family: 'Roboto', sans-serif;
     
   #app{
     width: 100vw;
-    height: 100vw;
+    height: auto;
   }
   #bg{
     position:  relative !important;
@@ -22,16 +22,10 @@ font-family: 'Roboto', sans-serif;
     height: 100%;
     width: 100%;
   } 
-  /* #moving-bg{
-    position: absolute !important;
-    z-index: -1 ;
-    top: 0 ;
-    left: 0; 
-    height: auto !important;
-  } */
-
+ 
   .container {
-    margin-bottom: 3rem;
+    margin: 1rem;
+    padding: 1rem;
   }
 
 /* header */
@@ -43,7 +37,8 @@ font-family: 'Roboto', sans-serif;
 }
 /* home */
 nav .brand-logo{
-  margin: 1rem;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
 }
 nav .brand-logo:hover{
   -webkit-filter: drop-shadow(5px 5px 3px #333 );
@@ -119,7 +114,7 @@ padding: 1rem;
 color : #ccc;}
 
 
-/* setting???  */
+/* setting */
 .drag-target{
   padding: 0;
 }
