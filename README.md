@@ -1,2 +1,2 @@
 # fullstack_portfolio
- fullstack app | school project | vue.js
+ fullstack app | vue.js | Node.js | Express.js |
